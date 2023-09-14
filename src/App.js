@@ -19,14 +19,24 @@ import "./App.css";
 
 
 
-
-
-
 const App = () => {
   return (
-    <div><Header />
-    <Main />
-    <Footer /></div>
+    <div>
+
+    <Header />
+
+    <Main 
+    imageMain={mc}
+    imageTitle={"overcast clouds"}
+    tempFrom={10}
+    tempTo={11}
+    humidity={78}
+    pressure={1008.48}
+    />
+
+    <Footer />
+    
+    </div>
 
   )
 }

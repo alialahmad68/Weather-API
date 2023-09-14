@@ -1,17 +1,26 @@
 import mc from "./img/weather-icons/mostlycloudy.svg"
-const Main = () => {
+const Main = (props) => {
+
+const imageMain=props.imageMain;
+const imageTitle=props.imageTitle;
+const tempFrom=props.tempFrom;
+const tempTo=props.tempTo;
+const humidity=props.humidity;
+const pressure=props.pressure;
+
+
     return (
         <main>
         <div className="img-mc">
-          <img src={mc} className="mostly-cloudy" />
-          <h2 className="mc-text">overcast clouds</h2>
+          <img src={imageMain} className="mostly-cloudy" />
+          <h2 className="mc-text">{imageTitle}</h2>
         </div>
         <div className="temp-data">
-          <p><b>Temperature&nbsp;</b>&nbsp;10&deg; to 11&deg;C</p>
+          <p><b>Temperature&nbsp;</b>&nbsp;{tempFrom}&deg; to {tempTo} &deg;C</p>
         </div>
         <div className="humidity-pressure">
-          <p className="humidity"><b>Humidity&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;78%</p>
-          <p className="pressure"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pressure&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;1008.48</p>
+          <p className="humidity"><b>Humidity&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;{humidity}%</p>
+          <p className="pressure"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pressure&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;{pressure}</p>
         </div>
        </main>
     );
