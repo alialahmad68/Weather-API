@@ -21,7 +21,7 @@ const App = () => {
 
   setLoading(true);
 
-  fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${City_Name}&cnt=8&units=metric&appid=b76300978a9e21f9ed5c25affd5b0032`)
+  fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${City_Name}&cnt=8&appid=b76300978a9e21f9ed5c25affd5b0032`)
   .then((res) => {
     if (!res.ok) {
       throw new Error("City name unavailable. Enter a valid city name");
@@ -41,23 +41,23 @@ const App = () => {
 
     function getBackgroundColor(id) {
       if (id < 300) {
-        return 'aqua'; 
+        return '#9ccef4'; 
       } else if (id >= 300 && id < 500) {
-        return 'lightblue'; 
+        return '#9ccef4'; 
       } else if (id >= 500 && id < 600) {
-        return 'blue'; 
+        return '#9ccef4'; 
       } else if (id >= 600 && id < 700) {
-        return 'white'; 
+        return '#9ccef4'; 
       } else if (id >= 700 && id < 800) {
-        return 'grey'; 
+        return '#9ccef4'; 
       } else if (id === 800) {
-        return 'yellow'; 
+        return '#9ccef4'; 
       } else if (id === 801) {
-        return 'black'; 
+        return '#9ccef4'; 
       } else if (id > 801 && id <= 805) {
-        return 'red'; 
+        return '#9ccef4'; 
       } else {
-        return 'lightblue'; 
+        return '#9ccef4'; 
       }
     }
 
@@ -67,12 +67,12 @@ const App = () => {
 
     <div  style={{ backgroundColor: backgroundColor }}>
     <Header searchWeatherByCity={Search_City} />
-      {loading ? (
+          {loading ? (
     <h3 className="loading"> Loading Your Requested Data</h3>) :
-     (
+      (
         <>
-          {weatherData && <Main  data={weatherData} color={backgroundColor} />}
-          {weatherData && <Footer  data={weatherData} color={backgroundColor}/>}
+          {weatherData && <Main  data={weatherData} />}
+          {weatherData && <Footer  data={weatherData} />}
         </>
       )}
     </div>

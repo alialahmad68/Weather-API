@@ -23,7 +23,7 @@ const backColor=props.color;
         <div className="daily-weather" key={index}>
           <p>{data.dt_txt.split(' ')[1].slice(0, 5)}</p>
           <img src={getWeatherIcon(props.data.list[index].weather[0].id)} alt="Weather Icon" />
-          <p>{data.main.temp}&deg;C</p>
+          <p>{convertKelvinToCelsius(data.main.temp)}&deg;C</p>
         </div>
       ))}
     </footer>
@@ -53,5 +53,11 @@ function getWeatherIcon(id) {
     return cloudy;
   }
 }
+
+function convertKelvinToCelsius(kelvin) {
+  const celsius = kelvin - 273.15;
+  return celsius.toFixed(2);
+}
+
 
 export default Footer;

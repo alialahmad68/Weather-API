@@ -29,7 +29,7 @@ const backColor=props.color;
           <h2 className="mc-text">{imageTitle}</h2>
         </div>
         <div className="temp-data">
-          <p><b>Temperature&nbsp;</b>&nbsp;{tempFrom}&deg; to {tempTo}&deg;C</p>
+          <p><b>Temperature&nbsp;</b>&nbsp;{convertKelvinToCelsius(tempFrom)}&deg; to { convertKelvinToCelsius(tempTo)}&deg;C</p>
         </div>
         <div className="humidity-pressure">
           <p className="humidity"><b>Humidity&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;{humidity}%</p>
@@ -61,6 +61,11 @@ const backColor=props.color;
     } else {
       return mc;
     }
+  }
+
+  function convertKelvinToCelsius(kelvin) {
+    const celsius = kelvin - 273.15;
+    return celsius.toFixed(2);
   }
   
   export default Main;
