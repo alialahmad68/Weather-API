@@ -7,7 +7,6 @@ header{
   background-color: #759eda;
   padding: 1.4%;
   display: flex;
-  
 }
 
 input{
@@ -19,13 +18,16 @@ input{
   color: white;   
   outline: none;
 }
+
 ::placeholder{   
   color: white;
-opacity: 0.5;
+  opacity: 0.5;
 }  
+
   input:focus{   
   border-bottom: 2px solid #5879C7; 
 }
+
 #city-name{
   padding: 0.5%;
 }
@@ -37,33 +39,36 @@ opacity: 0.5;
   margin-left: 3%;
   border: none;
 }
+
 body{
   margin: 0;
   background-color: #9ccef4;
 }
+
 .mostly-cloudy{
   width: 14%;
 }
+
 .img-mc{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: red; */
 }
+
 .mc-text{
   color: white;
-  margin-top: -0.5%;
+  margin-top: 0.4%;
   font-size: 25px;
 }
+
   .temp-data p{
   font-size: x-large;
   display: flex;
   justify-content: center;
-
 }
+
 .humidity-pressure{
-  /* background-color: aqua; */
   font-family:'Raleway', sans-serif;
   font-size: medium;
   display: flex;
@@ -71,9 +76,12 @@ body{
   justify-content: center;
   align-items: center;
 }
+
 .daily-weather img{
   width: 50%;
+  margin: auto;
   }
+
 footer{
  margin: auto;
   width: 80%;
@@ -83,18 +91,20 @@ footer{
   margin-top: 5%;
   justify-content: space-around;
 }
+
 .daily-weather{
   display: flex;
   flex-direction: column;
    text-align: center;
+   justify-content: center;
 }
+
 .loading{
-width: 50%;
+  width: 50%;
   color: #5879C7;
   margin: auto;
-
-
 }
+
 
 
 @media (  max-width: 678px) {
@@ -110,7 +120,7 @@ width: 50%;
 
   footer{
     display: grid;
-grid-template-columns: 1fr 1fr;  }
+    grid-template-columns: 1fr 1fr;  }
   
   .mostly-cloudy{
     width: 40%;

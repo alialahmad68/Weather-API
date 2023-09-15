@@ -14,12 +14,11 @@ import unknown from "./img/weather-icons/unknown.svg";
 
 const Footer = (props) => {
 
-
-
-  const image= clear;
+//getting backgroung color to pass it to the footer div style
+const backColor=props.color;
 
   return (
-    <footer>
+    <footer style={{ backgroundColor: backColor }}>
       {props.data.list.slice(0, 7).map((data, index) => (
         <div className="daily-weather" key={index}>
           <p>{data.dt_txt.split(' ')[1].slice(0, 5)}</p>

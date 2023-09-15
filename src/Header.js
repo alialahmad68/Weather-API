@@ -6,10 +6,12 @@ const Header = (props) => {
   const handleClick = () => {
     props.searchWeatherByCity(City)
   }
-  return (
-<div>
 
+  return (
+
+<div>
 <header>
+
       <input
         type="text"
         placeholder="Type in a city name"
@@ -17,13 +19,13 @@ const Header = (props) => {
         id="city-name"
         onChange={e=>setCity(e.target.value)}
       />
+
       <button 
       className="find-weather"
        onClick={handleClick}
-       
        > FIND WEATHER</button>
-    </header>
 
+    </header>
 </div>
   );
 };

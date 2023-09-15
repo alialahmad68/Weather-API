@@ -18,9 +18,12 @@ const tempTo=props.data.list[0].main.temp_max;
 const humidity=props.data.list[0].main.humidity;
 const pressure=props.data.list[0].main.pressure;
 
+//getting backgroung color to pass it to the Main div style
+const backColor=props.color;
+
 
     return (
-        <main>
+        <main  style={{ backgroundColor: backColor }}>
         <div className="img-mc">
           <img src={imageMain} className="mostly-cloudy" />
           <h2 className="mc-text">{imageTitle}</h2>
@@ -35,6 +38,9 @@ const pressure=props.data.list[0].main.pressure;
        </main>
     );
   };
+
+
+  //set the image according to the weather id
   function getWeatherIcon(id) {
     if (id < 300) {
       return storm;
