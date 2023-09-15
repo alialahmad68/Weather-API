@@ -7,10 +7,6 @@ import pc from "./img/weather-icons/partlycloudy.svg";
 import rain from "./img/weather-icons/rain.svg";
 import snow from "./img/weather-icons/snow.svg";
 import storm from "./img/weather-icons/storm.svg";
-import unknown from "./img/weather-icons/unknown.svg";
-
-
-
 
 const Footer = (props) => {
 
@@ -29,7 +25,6 @@ const backColor=props.color;
     </footer>
   );
 };
-
 
 
 function getWeatherIcon(id) {
@@ -56,7 +51,7 @@ function getWeatherIcon(id) {
 
 function convertKelvinToCelsius(kelvin) {
   const celsius = kelvin - 273.15;
-  return celsius.toFixed(2);
+  return celsius.toFixed(0);
 }
 
 

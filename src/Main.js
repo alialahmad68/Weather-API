@@ -21,7 +21,6 @@ const pressure=props.data.list[0].main.pressure;
 //getting backgroung color to pass it to the Main div style
 const backColor=props.color;
 
-
     return (
         <main  style={{ backgroundColor: backColor }}>
         <div className="img-mc">
@@ -33,7 +32,7 @@ const backColor=props.color;
         </div>
         <div className="humidity-pressure">
           <p className="humidity"><b>Humidity&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;{humidity}%</p>
-          <p className="pressure"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pressure&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;{pressure}</p>
+          <p className="pressure"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pressure&nbsp;</b>&nbsp;&nbsp;&nbsp;&nbsp;{pressure.toFixed(2)}</p>
         </div>
        </main>
     );
@@ -65,7 +64,7 @@ const backColor=props.color;
 
   function convertKelvinToCelsius(kelvin) {
     const celsius = kelvin - 273.15;
-    return celsius.toFixed(2);
+    return celsius.toFixed(0);
   }
   
   export default Main;
