@@ -11,12 +11,12 @@ import unknown from "./img/weather-icons/unknown.svg";
 
 const Main = (props) => {
 
-const imageMain=props.imageMain;
-const imageTitle=props.imageTitle;
-const tempFrom=props.tempFrom;
-const tempTo=props.tempTo;
-const humidity=props.humidity;
-const pressure=props.pressure;
+const imageMain= getWeatherIcon(props.data.list[0].weather[0].id);
+const imageTitle=props.data.list[0].weather[0].description;
+const tempFrom=props.data.list[0].main.temp_min;
+const tempTo=props.data.list[0].main.temp_max;
+const humidity=props.data.list[0].main.humidity;
+const pressure=props.data.list[0].main.pressure;
 
 
     return (
@@ -35,6 +35,27 @@ const pressure=props.pressure;
        </main>
     );
   };
+  function getWeatherIcon(id) {
+    if (id < 300) {
+      return storm;
+    } else if (id >= 300 && id < 500) {
+      return drizzle;
+    } else if (id >= 500 && id < 600) {
+      return rain;
+    } else if (id >= 600 && id < 700) {
+      return snow;
+    } else if (id >= 700 && id < 800) {
+      return fog;
+    } else if (id === 800) {
+      return clear;
+    } else if (id === 801) {
+      return pc;
+    } else if (id > 801 && id <= 805) {
+      return mc;
+    } else {
+      return mc;
+    }
+  }
   
   export default Main;
   
